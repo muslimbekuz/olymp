@@ -1,12 +1,12 @@
 .home-container {
   position: relative;
-  width: auto;
-  height: auto;
-  min-height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(-45deg, #110303f0, #dd6d04, #011c1afc, #7a6868);
+  width: auto;
+  height: auto;
+  min-height: 100%;
+  background: black;
 }
 
 .home-container a {
@@ -15,7 +15,7 @@
 }
 
 .home-container .nav-item a {
-  color: #e3c08d;
+  color: white;
 }
 
 .home-container .nav-item a.disabled {
@@ -25,43 +25,118 @@
 .home-container .navigation-menu {
   position: relative;
   z-index: 10000;
-  color: #efefee;
-  font-size: 40px;
   font-family: monospace;
+  font-size: 40px;
+  color: #efefee;
 }
 
-.home-container .animation-frame {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 55px;
+::-webkit-scrollbar {
+  width: 0.625rem;
+  height: 0.625rem;
 }
 
-.home-container .animation-wrapper {
-  position: relative;
-  width: 775px;
-  height: 775px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+::-webkit-scrollbar-thumb {
+  border-radius: 0.3125rem;
+  background: #111;
+  box-shadow:
+    inset 0.125rem 0.125rem 0.125rem rgba(255, 255, 255, 0.25),
+    inset -0.125rem -0.125rem 0.125rem rgba(0, 0, 0, 0.25);
+  cursor: default;
 }
 
-.home-container .sphere-animation {
-  position: relative;
-  width: 580px;
-  height: 580px;
+::-webkit-scrollbar-track {
+  background: #333;
 }
 
-.home-container .sphere path {
-  fill: url(#sphereGradient);
-  stroke-width: 1px;
-  stroke: rgba(80, 80, 80, 0.35);
-  backface-visibility: hidden;
+::selection {
+  color: #333;
+  background: #fff;
 }
 
-@media (min-width: 500px) {
-  .sphere path {
-    stroke-width: 0.4px;
-  }
+html,
+body {
+  overflow: hidden;
+  height: 100vh;
+  height: 100dvh;
+  margin: 0;
+}
+
+body {
+  display: grid;
+  grid-template-rows: calc(100dvh - 4rem) 4rem;
+  font-family: system-ui, sans-serif;
+}
+
+canvas,
+.editor,
+#controls {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+canvas {
+  z-index: var(--canvas-z-index);
+  width: 100%;
+  height: auto;
+  background: black;
+  touch-action: none;
+  object-fit: contain;
+  --canvas-z-index: -1;
+}
+
+.editor,
+.overlay,
+#error {
+  padding: 1em;
+  font-family: "Courier New", Courier, monospace;
+  background: repeating-linear-gradient(0deg, #000a, #1119, #000a 0.25rem);
+}
+
+.editor {
+  border: none;
+  color: #fefefe;
+  resize: none;
+  tab-size: 2;
+}
+
+.editor:focus {
+  outline: none;
+}
+
+#error {
+  overflow: auto;
+  padding-top: 0.5em;
+  margin: 0;
+  color: firebrick;
+  grid-row: 2;
+  grid-column: 1;
+  padding-block: 0;
+  text-wrap: pretty;
+}
+
+#indicator {
+  position: absolute;
+  top: calc(var(--top, 0px) - var(--scroll-top, 0px));
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid firebrick;
+  transform: translateY(-25%);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 0;
+}
+
+.editor,
+.overlay {
+  font-size: 1rem;
+  line-height: 1.2;
+  white-space: pre;
 }

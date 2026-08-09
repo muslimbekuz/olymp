@@ -1,15 +1,15 @@
 .login-container {
   position: relative;
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #000814, #003d33, #00b894, #6c5ce7);
+  background-size: 200% 200%;
   animation: gradient 15s ease infinite;
   -webkit-animation: gradient 15s ease infinite;
-  background-size: 200% 200%;
 }
 
 .login-container a {
@@ -19,112 +19,115 @@
 
 .login-container .login-frame {
   position: relative;
-  width: 420px;
-  height: auto;
   display: flex;
   flex-direction: column;
+  width: 420px;
+  height: auto;
+  padding: 25px;
   border-radius: 10px;
   background: #ffffff;
-  padding: 25px;
 }
 
 .login-container .login-frame .login-top {
   position: relative;
-  width: 100%;
-  height: auto;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: auto;
 }
 
 .login-container .login-top span {
   font-family: "Poppins";
-  font-style: normal;
-  font-weight: 700;
   font-size: 30px;
+  font-weight: 700;
+  font-style: normal;
   line-height: 34px;
 }
 
 .login-container .login-top p {
   margin-top: 15px;
   font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
   font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
   line-height: 26px;
 }
 
 .login-container .login-top div {
   font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
   font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
   line-height: 26px;
 }
 
 .login-container .login-frame .login-input-frame {
   position: relative;
-  width: 100%;
-  height: auto;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: auto;
 }
 
 .login-container .login-input-container {
   position: relative;
-  margin-top: 15px;
-  width: 100%;
-  height: auto;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: auto;
+  margin-top: 15px;
 }
 
 .login-container .login-input-container label {
   margin-bottom: 0px;
   font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
   font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
   line-height: 18px;
 }
 
 .login-container .login-input-container input {
   position: relative;
-  margin-top: 10px;
-  padding-left: 20px;
   width: 100%;
   height: 55px;
-  background: #f6f5f5;
+  padding-left: 20px;
   border: 1px solid #dddddd;
   border-radius: 8px;
+  margin-top: 10px;
+  background: #f6f5f5;
 }
 
 .login-container .login-frame .login-btn {
   position: relative;
-  margin-top: 25px;
-  width: 100%;
-  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #33a0ff;
+  width: 100%;
+  height: 70px;
   border-radius: 10px;
+  margin-top: 25px;
   font-family: "Nunito";
-  font-style: normal;
-  font-weight: 800;
   font-size: 24px;
+  font-weight: 800;
+  font-style: normal;
   line-height: 33px;
   letter-spacing: -0.02em;
   color: #ffffff;
+  background: #33a0ff;
 }
 
 /* Background animation */
+
 @-webkit-keyframes gradient {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -134,9 +137,11 @@
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
