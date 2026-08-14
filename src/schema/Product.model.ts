@@ -44,6 +44,7 @@ const productSchema = new Schema(
     kidsAge: {
       type: String,
       enum: KidsAge,
+      //TODO: fix here!
       default: KidsAge.CHILD,
     },
 
@@ -65,7 +66,7 @@ const productSchema = new Schema(
 );
 
 productSchema.index(
-  { productName: 1, productSize: 1, productVolume: 1 },
+  { productName: 1, KidsAge: 1, productVolume: 1 },
   { unique: true },
 );
 export default mongoose.model("Product", productSchema);
