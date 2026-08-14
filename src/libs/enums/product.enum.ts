@@ -8,7 +8,7 @@ export enum KidsAge {
   TODDLER = "TODDLER",
   CHILD = "CHILD",
   PRETEEN = "PRETEEN",
-  TEEN = "TEEN",
+  PRESCHOOLER = "PRESCHOOLER",
 }
 
 export enum ProductStatus {

@@ -24,7 +24,7 @@ memberController.getRestaurant = async (req: Request, res: Response) => {
 
     res.status(HttpCode.OK).json(result);
   } catch (err) {
-    console.log("Error, processSignUp:", err);
+    console.log("Error, getRestaurant:", err);
     if (err instanceof Errors) res.status(err.code).json(err);
     else res.status(Errors.standard.code).json(Errors.standard);
   }
