@@ -21,7 +21,7 @@ class MemberService {
   public async getRestaurant(): Promise<Member> {
     const result = await this.memberModel
       .findOne({
-        memberType: MemberType.RESTAURANT,
+        memberType: MemberType.STORE,
       })
       .exec();
     if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
@@ -129,7 +129,7 @@ class MemberService {
 
   public async processSignUp(input: MemberInput): Promise<Member> {
     const exist = await this.memberModel
-      .findOne({ memberType: MemberType.RESTAURANT })
+      .findOne({ memberType: MemberType.STORE })
       .exec();
 
     if (exist) throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);

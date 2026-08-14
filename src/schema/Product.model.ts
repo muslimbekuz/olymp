@@ -1,9 +1,9 @@
 import mongoose, { Schema } from "mongoose";
 import {
   ProductCollection,
-  ProductSize,
+  ProductEdition,
   ProductStatus,
-  ProductVolume,
+  KidsAge,
 } from "../libs/enums/product.enum";
 
 const productSchema = new Schema(
@@ -35,16 +35,16 @@ const productSchema = new Schema(
       required: true,
     },
 
-    productSize: {
+    productEdition: {
       type: String,
-      enum: ProductSize,
-      default: ProductSize.NORMAL,
+      enum: ProductEdition,
+      default: ProductEdition.NEW,
     },
 
-    productVolume: {
-      type: Number,
-      enum: ProductVolume,
-      default: ProductVolume.ONE,
+    kidsAge: {
+      type: String,
+      enum: KidsAge,
+      default: KidsAge.CHILD,
     },
 
     productDesc: {
