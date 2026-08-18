@@ -1,4 +1,4 @@
-export enum ProductEdition {
+export enum ProductSize {
   LIMITED = "LIMITED",
   NEW = "NEW",
   OLD = "OLD",

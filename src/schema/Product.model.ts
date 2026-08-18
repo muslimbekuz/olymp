@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 import {
   ProductCollection,
-  ProductEdition,
+  ProductSize,
   ProductStatus,
   ProductVolume,
 } from "../libs/enums/product.enum";
@@ -35,10 +35,10 @@ const productSchema = new Schema(
       required: true,
     },
 
-    productEdition: {
+    productSize: {
       type: String,
-      enum: ProductEdition,
-      default: ProductEdition.NEW,
+      enum: ProductSize,
+      default: ProductSize.NEW,
     },
 
     productVolume: {
@@ -65,7 +65,7 @@ const productSchema = new Schema(
 );
 
 productSchema.index(
-  { productName: 1, productEdition: 1, productVolume: 1 },
+  { productName: 1, productSize: 1, productVolume: 1 },
   { unique: true },
 );
 export default mongoose.model("Product", productSchema);
