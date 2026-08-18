@@ -37,7 +37,7 @@ export interface ProductInput {
   productPrize: number;
   productLeftCount: number;
   productEdition?: ProductEdition;
-  productVolume?: number;
+  productVolume?: string;
   productDesc?: string;
   productImages?: string[];
   productView?: number;
@@ -51,7 +51,7 @@ export interface ProductUpdateInput {
   productPrize?: number;
   productLeftCount?: number;
   productEdition?: ProductEdition;
-  productVolume?: number;
+  productVolume?: string;
   productDesc?: string;
   productImages?: string[];
   productView?: number;

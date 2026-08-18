@@ -1,10 +1,10 @@
 export enum ProductEdition {
+  LIMITED = "LIMITED",
   NEW = "NEW",
   OLD = "OLD",
-  LIMITED = "LIMITED",
 }
 
-export enum KidsAge {
+export enum ProductVolume {
   TODDLER = "TODDLER",
   CHILD = "CHILD",
   PRETEEN = "PRETEEN",
