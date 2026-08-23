@@ -7,7 +7,10 @@
   min-width: 100%;
   height: auto;
   min-height: 100%;
-  background: linear-gradient(-45deg, #110303bf, #13e347, #011c1aba, #bd18ac);
+  background: url("/img/users.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .users-container a {
@@ -16,7 +19,7 @@
 }
 
 .users-container .nav-item a {
-  color: #e3c08d;
+  color: black;
 }
 
 .users-container .nav-item a.disabled {
@@ -29,7 +32,7 @@
   z-index: 10000;
   font-family: monospace;
   font-size: 40px;
-  color: #efefee;
+  color: #898071;
 }
 
 .users-container .users-frame {
@@ -78,7 +81,7 @@
   font-weight: 400;
   font-style: normal;
   line-height: 25px;
-  color: #ffffff;
+  color: black;
 }
 
 .users-container select:focus {

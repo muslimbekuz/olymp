@@ -6,7 +6,10 @@
   width: auto;
   height: auto;
   min-height: 100%;
-  background: linear-gradient(-45deg, #110303bf, #003d33, red, #2196f3);
+  background: url("/img/gears.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .products-container a {
@@ -15,7 +18,7 @@
 }
 
 .products-container .nav-item a {
-  color: #e3c08d;
+  color: red;
 }
 
 .products-container .nav-item a.disabled {
@@ -28,7 +31,7 @@
   z-index: 10000;
   font-family: monospace;
   font-size: 40px;
-  color: #efefee;
+  color: black;
 }
 
 .products-container .restaurant-menu-frame {
@@ -77,7 +80,7 @@
   font-weight: 400;
   font-style: normal;
   line-height: 25px;
-  color: #ffffff;
+  color: black;
 }
 
 .products-container .long-input {
