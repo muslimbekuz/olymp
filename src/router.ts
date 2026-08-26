@@ -36,6 +36,8 @@ router.get(
   memberController.retrieveAuth,
   productController.getProduct,
 );
+router.get("/product/:id/edit", productController.getEditProductPage);
+router.put("/product/:id/edit", productController.updateChosenProduct);
 
 /* Order */
 router.post(

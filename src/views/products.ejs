@@ -35,12 +35,13 @@
             <thead class="thead-light">
               <tr class="thead-light">
                 <th scope="col">T/r</th>
-                <th scope="col">Product Name</th>
-                <th scope="col">Product Type</th>
-                <th scope="col">Product Edition</th>
-                <th scope="col">Product Price</th>
-                <th scope="col">Product Left Count</th>
+                <th scope="col">Gear Name</th>
+                <th scope="col">Gear Type</th>
+                <th scope="col">Gear Edition</th>
+                <th scope="col">Gear Price</th>
+                <th scope="col">Gear Left Count</th>
                 <th scope="col">Status</th>
+                <th scope="col">Action</th>
               </tr>
             </thead>
             <!--  LOOP PRODUCTS: START  -->
@@ -58,6 +59,9 @@
                   <option value="PROCESS" <%= value.productStatus === 'PROCESS' ? 'selected': ''%> >PROCESS</option>
                   <option value="DELETE" <%= value.productStatus === 'DELETE' ? 'selected': ''%> >DELETE</option>
                 </select>
+              </td>
+              <td>
+                <a href="/admin/product/<%= value._id %>/edit" class="edit-btn">Edit</a>
               </td>
             </tbody>
             <% }) %>

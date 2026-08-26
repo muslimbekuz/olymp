@@ -21,6 +21,12 @@ routerAdmin.get("/check-me", restaurantController.checkAuthSession);
 
 /* Product */
 routerAdmin.get(
+  "/product/:id/edit",
+  restaurantController.verifyRestaurant,
+  productController.getEditProductPage,
+);
+
+routerAdmin.get(
   "/product/all",
   restaurantController.verifyRestaurant,
   productController.getAllProducts,

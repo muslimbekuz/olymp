@@ -365,3 +365,18 @@ table th {
 .products-container .slider.round:before {
   border-radius: 50%;
 }
+
+.edit-btn {
+  display: inline-block;
+  padding: 6px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-align: center;
+  color: white !important;
+  background-color: #28a745;
+}
+
+.edit-btn:hover {
+  color: white !important;
+  background-color: #218838;
+}

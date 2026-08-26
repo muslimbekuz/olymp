@@ -1,0 +1,76 @@
+<%- include('includes/header') %>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/product-edit.css">
+
+<body>
+  <div class="edit-container">
+    <h1 class="edit-title">EDIT GEAR</h1>
+
+    <form id="editForm">
+      <div class="field full">
+        <label>Gear Name</label>
+        <input type="text" name="productName" value="<%= product.productName %>" />
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label>Gear Price</label>
+          <input type="number" name="productPrice" value="<%= product.productPrice %>" />
+        </div>
+        <div class="field">
+          <label>Gear Left Count</label>
+          <input type="number" name="productLeftCount" value="<%= product.productLeftCount %>" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label>Gear Type</label>
+          <select name="productCollection">
+            <option value="HOME" <%= product.productCollection === 'HOME' ? 'selected' : '' %>>HOME</option>
+            <option value="KIDS" <%= product.productCollection === 'KIDS' ? 'selected' : '' %>>KIDS</option>
+            <option value="OFFICE" <%= product.productCollection === 'OFFICE' ? 'selected' : '' %>>OFFICE</option>
+            <option value="REHABILITATION" <%= product.productCollection === 'REHABILITATION' ? 'selected' : '' %>>REHABILITATION</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Gear Edition</label>
+          <select name="<%= product.productCollection === 'KIDS' ? 'productVolume' : 'productSize' %>">
+            <% (product.productCollection === 'KIDS' ? ['TODDLER','CHILD','PRETEEN','PRESCHOOLER'] : ['NEW','OLD','LIMITED']).forEach(function(opt) { %>
+              <option value="<%= opt %>" <%= (product.productCollection === 'KIDS' ? product.productVolume : product.productSize) === opt ? 'selected' : '' %>><%= opt %></option>
+            <% }) %>
+          </select>
+        </div>
+      </div>
+
+      <div class="field full">
+        <label>Gear Description</label>
+        <textarea name="productDescription" rows="4"><%= product.productDesc || '' %></textarea>
+      </div>
+
+      <button type="submit" class="save-btn">Save</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('editForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
+
+      const id = window.location.pathname.split('/')[3]; // /admin/product/<id>/edit
+      const res = await fetch(`/admin/product/${id}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (res.ok) {
+        window.location.href = '/admin/product/all';
+      } else {
+        alert('Xatolik yuz berdi');
+      }
+    });
+  </script>
+</body>

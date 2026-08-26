@@ -107,4 +107,17 @@ productController.updateChosenProduct = async (req: Request, res: Response) => {
   }
 };
 
+productController.getEditProductPage = async (req: Request, res: Response) => {
+  try {
+    console.log("getEditProductPage");
+    const { id } = req.params;
+    const result = await productService.getProduct(null, id as string);
+
+    res.render("product-edit.ejs", { product: result });
+  } catch (err) {
+    console.log("Error, getEditProductPage:", err);
+    res.redirect("/admin/product/all");
+  }
+};
+
 export default productController;
